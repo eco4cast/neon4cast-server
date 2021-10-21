@@ -1,3 +1,3 @@
-MINIO_ACCESS_KEY=<make-a-username-here>
-MINIO_SECRET_KEY=<put-a-password-here>
+MINIO_ROOT_USER=<make-a-username-here>
+MINIO_ROOT_PASSWORD=<put-a-password-here>
 

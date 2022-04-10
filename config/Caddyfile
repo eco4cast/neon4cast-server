@@ -1,6 +1,17 @@
 
+## Alias for Jetstream S3 Server
 data.ecoforecast.org {
+    tls cboettig@gmail.com
+   reverse_proxy https://js2.jetstream-cloud.org:8001 {
+        header_up X-Forwarded-Proto {scheme}
+        header_up X-Forwarded-Host {host}
+        header_up Host {host}
+    }
+}
 
+
+
+minio2.ecoforecast.org {
     tls cboettig@gmail.com
     reverse_proxy minio:9000 {
         header_up X-Forwarded-Proto {scheme}
@@ -10,26 +21,24 @@ data.ecoforecast.org {
     }
 }
 
-status.ecoforecast.org {
+status2.ecoforecast.org {
   tls cboettig@gmail.com
   reverse_proxy monitor:19999 
 
 }
 
-rstudio.ecoforecast.org {
+rstudio2.ecoforecast.org {
   tls cboettig@gmail.com
   reverse_proxy rstudio:8787 {
     header_up Host {host}
   }
 }
 
-shiny.ecoforecast.org {
+shiny2.ecoforecast.org {
   tls cboettig@gmail.com
   reverse_proxy shiny:3838 {
     header_up Host {host}
   }
-
 }
-
 
 

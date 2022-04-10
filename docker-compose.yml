@@ -26,17 +26,16 @@ services:
     restart: always
     volumes:
       - /${EFI}/log/cron:/var/log
-      - /${EFI}:/efi_neon_challenge
-      - ..:/home/rstudio/Documents
+      - ${EFI}:/home/rstudio/
       - /opt/local/renv/cache:/renv/cache
     env_file: ./config/rstudio_env.sh
 
-  shiny:
-    image: rocker/shiny-verse
-    restart: always
-    volumes:
-      - ../neon4cast-shiny:/srv/shiny-server
-      - /${EFI}/log/shiny:/var/log/h shiny-server
+    #  shiny:
+    #image: rocker/shiny-verse
+    #restart: always
+    #volumes:
+    #  - ../neon4cast-shiny:/srv/shiny-server
+    #  - /${EFI}/log/shiny:/var/log/h shiny-server
 
   ## not necessary, just for convenience 
   monitor:
